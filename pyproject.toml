@@ -3,12 +3,11 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "util"
+name = "googl"
 authors = [{name = "M", email = "refits.minxes0h@icloud.com"}]
 dynamic = ["version", "description"]
 dependencies = [
     "python-magic",
-    "pyyaml"
 ]
 
 [license]
