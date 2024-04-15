@@ -1,5 +1,5 @@
 from util.relation import Relation
-from util.googl import file, File
+from . import file, File
 
 
 def test_files(paths):
@@ -7,3 +7,6 @@ def test_files(paths):
     assert Relation(paths, File(parents=['root']).match(pattern='tmp'),
                     file.equal).one_to_one()
     for f in files: File.delete(f)
+
+def dups_test(path):
+    assert not file.dups(path) 

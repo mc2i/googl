@@ -1,17 +1,18 @@
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
-
-[project]
+[tool.poetry]
 name = "googl"
-authors = [{name = "M", email = "refits.minxes0h@icloud.com"}]
-dynamic = ["version", "description"]
-dependencies = [
-    "python-magic",
-]
+version = "0.1.0"
+description = "Drive files"
+authors = ["M <refits.minxes0h@icloud.com>"]
+license = "UNLICENSE"
+readme = "README.md"
 
-[license]
-file = "UNLICENSE"
+[tool.poetry.dependencies]
+python = "^3.11"
+util = {path = "../util"}
+google-auth-oauthlib = "^1.2.0"
+google-api-python-client = "^2.125.0"
 
-[tool.flit.sdist]
-exclude = ["tests/"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
