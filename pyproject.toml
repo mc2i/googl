@@ -7,11 +7,15 @@ license = "UNLICENSE"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.12"
 util = {path = "../util"}
 google-auth-oauthlib = "^1.2.0"
 google-api-python-client = "^2.125.0"
 
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.23.0"
+pytest = "^8.1.1"
 
 [build-system]
 requires = ["poetry-core"]
