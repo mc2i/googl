@@ -1,0 +1,7 @@
+$dir = "$HOME/Downloads"
+$data = Get-Content -Path "$dir/Takeout/YouTube and YouTube Music/history/watch-history.json" | ConvertFrom-Json
+$urls = $data.titleUrl | Select-Object -Unique                                                                           
+$reversedUrls = $urls.Clone()                 
+[Array]::Reverse($reversedUrls)
+$commands = for ($i = 0; $i -lt $reversedUrls.Count; $i++) {"$dir/yt-dlp.exe --quiet --cookies-from-browser chrome --simulate --mark-watched $($reversedUrls[$i])" + "rn" + "echo Progress: $i / $($(reversedUrls.Count)" }
+	$commands | Out-File -FilePath "$dir/youtube-hist-transfer-commands.bat"
